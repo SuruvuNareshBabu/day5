@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration form</title>
+    <style>
+      /* Common input styles */
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      input[type="tel"],
+      input[type="date"],
+      select {
+        width: 230px;
+        height: 28px;
+        border: 1px solid #000;
+        border-radius: 3px;
+        padding: 4px 6px;
+        font-size: 14px;
+        box-sizing: border-box;
+      }
+
+      /* Placeholder styling */
+      input::placeholder {
+        color: #777;
+        font-size: 13px;
+      }
+
+      /* Textarea */
+      textarea {
+        width: 95%;
+        border: 1.5px solid #000;
+        border-radius: 3px;
+        padding: 6px;
+        font-size: 14px;
+      }
+
+      /* Fieldset & legend */
+      fieldset {
+        border: 2px solid #000;
+        border-radius: 5px;
+        padding: 12px;
+        margin-bottom: 20px;
+      }
+
+      legend {
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      /* Labels */
+      label {
+        display: inline-block;
+        width: 150px; /* prevents wrapping */
+        text-align: left;
+        font-size: 14px;
+      }
+
+      /* Gender radio group */
+      .gender-group {
+        display: inline-flex; /* keeps all radios in one line */
+        align-items: center;
+        gap: 14px; /* spacing between items */
+      }
+
+      .gender-group label {
+        width: auto;
+      }
+      .radio-group {
+        display: inline-flex;
+        gap: 1px; /* space between radio buttons */
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body bgcolor="#f0f8ff">
+    <center>
+      <form action="" method="post">
+        <h1>Course Registration form</h1>
+        <fieldset style="width: 450px">
+          <legend>personal information</legend>
+          <label for="firstname">Username:</label>
+          <input
+            type="text"
+            id="firstname"
+            name="firstname"
+            placeholder="Enter your  firstName"
+            required
+            maxlength="15"
+          /><br /><br />
+          <label for="lastName">lastname:</label>
+          <input
+            type="text"
+            id="lastname"
+            name="lastname"
+            placeholder="Enter your lastName"
+            required
+            maxlength="15"
+          /><br /><br />
+
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your Email"
+          /><br /><br />
+
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+          /><br /><br />
+
+          <label for="confirm_password">Confirm Password:</label>
+          <input
+            type="password"
+            id="confirm_password"
+            name="confirm_password"
+            placeholder="Confirm_password"
+            required
+          /><br /><br />
+          <label for="DOB">DOB</label>
+          <input type="date" id="DOB" min="18" max="60" /><br /><br />
+
+          <label for="mobile">mobile number:</label>
+          <input
+            type="tel"
+            name="mobile"
+            id="mobile"
+            placeholder="Enter your mobile Number"
+            maxlength="10"
+          /><br /><br />
+
+          <label>Gender:</label>
+          <div class="gender-group">
+            <label>
+              <input type="radio" name="gender" value="male" /> Male
+            </label>
+
+            <label>
+              <input type="radio" name="gender" value="female" /> Female
+            </label>
+
+            <label>
+              <input type="radio" name="gender" value="other" /> Other
+            </label>
+          </div>
+          <br /><br />
+
+          <label for="country">Country:</label>
+          <select name="country" id="country">
+            <option value="india">India</option>
+            <option value="usa">USA</option>
+            <option value="uk">UK</option>
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option></select
+          ><br /><br />
+          <label for="file">Upload your Resume</label>
+          <input type="file" id="file" name="file" /><br /><br />
+        </fieldset>
+      </form>
+      <fieldset style="width: 450px">
+        <legend>course details</legend>
+        <label for="Institute">Institute Name</label>
+        <input
+          type="text"
+          name="text"
+          id="Institute"
+          value="TAP ACADEMY"
+        /><br /><br />
+        <label for="course" name="course" id="course"
+          >Select your course:</label
+        >
+        <select name="course" id="course">
+          <option value="data ">web & mobile full stack java</option>
+          <option value="full stack java">full stack java</option>
+          <option value="cloud computing">data science</option>
+          <option value="python">Python</option>
+          <option value="java">Java</option></select
+        ><br /><br />
+
+        <div class="radio-group">
+          <label>Delivery Mode:</label>
+          <input type="radio" name="mode" id="online" value="online" />
+          <label for="online">Online</label>
+
+          <input type="radio" name="mode" id="offline" value="offline" />
+          <label for="offline">Offline</label>
+        </div>
+        <br /><br />
+
+        <label type="range" for="duration">java coding knowledge</label>
+        <input
+          type="range"
+          id="duration"
+          name="duration"
+          min="0"
+          max="10"
+          step="1"
+        /><br /><br />
+        <label for="comments">Comments:</label><br />
+        <textarea
+          name="comments"
+          id="comments"
+          cols="60"
+          rows="10"
+          placeholder="Enter your comments here..."
+        ></textarea>
+        <input type="reset" value="Reset" />
+        <input type="submit" value="Submit" /><br /><br />
+      </fieldset>
+    </center>
+  </body>
+</html>
